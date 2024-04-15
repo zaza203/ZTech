@@ -12,7 +12,7 @@ class Category(models.Model):
 
 class Article(models.Model):
     title = models.CharField(max_length = 200)
-    headline = models.CharField(max_length = 250)
+    headline = models.CharField(max_length = 250, null = True)
     category = models.ForeignKey(Category, on_delete = models.CASCADE)
     cover_image = models.ImageField(upload_to = 'covers/')
     created_at = models.DateTimeField(auto_now_add = True)
